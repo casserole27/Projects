@@ -10,10 +10,11 @@ Date: July 2022
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
-       
+    margin-top: 2rem;       
 }
 
 /*form {
@@ -24,8 +25,8 @@ body {
 
 .wrapper {
     background-color: rgb(77, 134, 77);
-    width: 70%;
-    padding: 5rem;
+    width: 50%;
+    padding: 2rem;
     border: 1rem solid goldenrod;
     border-radius: 1rem;
     box-shadow: -1px 10px 20px 10px rgb(59, 59, 59);
@@ -37,8 +38,6 @@ body {
 h1 {
     font-size: 4em;
     color: white;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
 }
 
 .input-box {
@@ -46,8 +45,6 @@ h1 {
     font-size: 1.5em;
     color: navy;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
     width: 60%;
     padding: 1rem;
     border: 1rem solid goldenrod;
@@ -63,7 +60,7 @@ h1 {
     color: navy;
     background-color: goldenrod;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 3rem;
     width: 20%;
     border: .5rem solid white;
@@ -75,7 +72,6 @@ h1 {
     display: flex;
     flex-direction: row;
     gap: 5rem;
-    margin-top: 2rem;
 }
 
 .placeholder {
@@ -86,4 +82,10 @@ h1 {
 .cat-image {
     display: none;
 }
-    
+
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 80%;
+    }
+}
