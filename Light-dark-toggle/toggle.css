@@ -1,0 +1,160 @@
+/****** VARIABLES ******/
+
+:root {
+
+    /*COLORS*/
+    --bg: #201a23;
+    --field:#44354A;
+    --button:#9e4770;
+    --button-hover: #662845;
+    --text: #fff;
+    --button-text: gold;
+    --focus: rgb(57, 57, 250);
+
+    /*BORDER RADIUS*/
+    --br-soft: 1rem;
+    --br-round: 50%;
+}
+
+.lightmode {
+    --bg:  #f4e1ff;
+    --field: #ceb2d8;
+    --button: #cc90ac;
+    --button-hover: #ce5f93;
+    --text: #555;
+    --button-text: #00366B;
+    --focus: gold;
+}
+
+/*====== MARGIN AND PADDING RESET ======*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*====== GLOBAL STYLES ******/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    max-width: 500px;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0 auto;
+}
+
+button {
+    width: 120px;
+    height: 60px;
+    background: var(--button);
+    border: none;
+    border-radius: 6px;
+    font-size: var(--fs-s);
+}
+
+button:hover {
+    background: var(--button-hover);
+    transform: scale(1.1);
+    transition: all .5s ease;
+}
+
+button:focus {
+    background: var(--button-hover);
+    outline: 3px solid var(--focus);
+}
+
+button:active {
+    background: var(--button-hover);
+    transform: scale(.90);
+}
+
+.star-btn {
+    margin-right: 1em;
+}
+
+.body-container {
+    width: 90%;
+    background-color: var(--field);
+    padding: 2em;
+    margin: 2em auto 0 auto;
+    border-radius: var(--br-soft);
+    border: 3px solid var(--button);
+}
+
+.products-container {
+    margin-bottom: 4em;
+}
+
+/*====== TOGGLE ======*/
+
+label { /*toggle container*/
+    width: 300px;
+    height: 120px;
+    position: relative;
+    display: block;
+    background-color: #2d2730;
+    margin: 0 auto 2em auto;
+    border: 2px solid lightgray;
+    border-radius: 200px;
+    box-shadow: inset 0px 2px 5px black, inset 0px -2px 5px gray;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label:focus {
+    outline: 5px solid var(--focus);    
+}
+
+label::after{ 
+    /*toggle button, the ::after selector inserts something after the content of each selected element(s),
+    use content or build it yourself like in this example*/
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    background: linear-gradient(180deg, #0173ff, #3a3a3a);
+    border-radius: var(--br-round);
+    transition: 0.3s;
+}
+
+input { /* hide checkbox input, removes from screen reader */
+    width: 0;
+    height: 0;
+    visibility: hidden;          
+}   
+
+input:checked + label { /*select and style the first label element that is placed immediately after the input element when checked*/
+    background: #fff;
+}
+
+input:checked + label:after { /*select and style the first label:after element that is placed immediately after the input element when checked*/
+    left: 290px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+}
+
+.moon,
+.sun {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 15px;
+    opacity: .80;
+    z-index: 1;
+}
+
+.moon {
+    left: 15px;
+    fill: #7e7e7e;
+    transition: 0.3s;
+}
+
+.sun {
+    right: 15px;
+    fill: #fff;
+    transition: 0.3s;
+}
