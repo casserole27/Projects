@@ -48,16 +48,18 @@ body {
 button {
     width: 120px;
     height: 60px;
+    font-size: var(--fs-s);
     background: var(--button);
     border: none;
     border-radius: 6px;
-    font-size: var(--fs-s);
+    cursor: pointer;
+    transition: all .5s ease;
 }
 
 button:hover {
     background: var(--button-hover);
     transform: scale(1.1);
-    transition: all .5s ease;
+   
 }
 
 button:focus {
@@ -103,8 +105,10 @@ label { /*toggle container*/
     transition: 0.3s;
 }
 
+label:hover,
 label:focus {
-    outline: 5px solid var(--focus);    
+    transform: scale(1.1);
+    outline: 5px solid var(--focus);  
 }
 
 label::after{ 
@@ -158,3 +162,41 @@ input:checked + label:after { /*select and style the first label:after element t
     fill: #fff;
     transition: 0.3s;
 }
+
+@media (max-width: 450px) {
+
+    .products-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    label {
+        width: 200px;
+        height: 80px;
+    }
+
+    label:after {
+        width: 60px;
+        height: 60px;
+    }
+
+    input:checked + label:after {
+        left: 190px;
+    }
+
+    .sun,
+    .moon {
+        width: 50px;
+        height: 50px;
+        top: 10px;
+    }
+
+    .moon {
+        left: 10px;
+    }
+
+    .sun {
+        right: 10px;
+    }
+}
+
